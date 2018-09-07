@@ -1,4 +1,4 @@
-# Append these to your existing .bash_profile
+# Append these to your existing ~/.bash_profile
 
 # git aliases
 alias ga.='git add .'
