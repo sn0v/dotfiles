@@ -1,6 +1,7 @@
 # Append these to your existing ~/.bash_profile
 
 # git aliases
+alias ga='git add'
 alias ga.='git add .'
 alias gb='git branch'
 alias gc='git commit'
