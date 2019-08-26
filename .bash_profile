@@ -3,9 +3,11 @@
 # git aliases
 alias ga='git add'
 alias ga.='git add .'
+alias gau='git add -u'
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --amend'
+alias gcan='git commit --amend --no-edit'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git log'
@@ -62,3 +64,8 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+if [ -f /Users/utkarshjaiswal/.bashrc ]; then source /Users/utkarshjaiswal/.bashrc; fi
+
+# Samsara specific aliases.
+alias tr='PRINT_LOG_LEVEL=ERROR taskrunner'
+alias gfix='git rebase master --exec "git commit --amend --reset-author --no-edit"'
