@@ -30,38 +30,44 @@ function gcp { git cherry-pick "$1"; }
 
 # update current branch off master
 gup () {
-    # define working branch
-    branch=$(git symbolic-ref --short HEAD)
-    gsh
-    gco master
-    gpl
-    gco $branch
-    git rebase master
-    gsp
+  # define working branch
+  branch=$(git symbolic-ref --short HEAD)
+  gsh
+  gco master
+  gpl
+  gco $branch
+  git rebase master
+  gsp
 }
 
 # interactive rebase on current branch
 # eg - gri 3 to rebase last 3 commits on HEAD
 gri () {
-    git rebase -i HEAD~"$1"
+  git rebase -i HEAD~"$1"
 }
 
 # (non-force) push current branch to origin
 gph () {
-    branch=$(git symbolic-ref --short HEAD)
-    git push origin $branch
+  branch=$(git symbolic-ref --short HEAD)
+  git push origin $branch
 }
 
 # (force) push current branch to origin
 gpf () {
-    branch=$(git symbolic-ref --short HEAD)
-    git push -f origin $branch
+  branch=$(git symbolic-ref --short HEAD)
+  git push -f origin $branch
 }
 
 # (force) delete $arg branch
 gbd () {
-    git branch -D "$1"
+  git branch -D "$1"
 }
+
+# Show git branch in prompt - zsh
+autoload -Uz vcs_info
+precmd () { vcs_info }
+setopt prompt_subst
+PS1="\$vcs_info_msg_0_$PS1"
 
 # Samsara specific aliases.
 alias trun='PRINT_LOG_LEVEL=ERROR taskrunner'
