@@ -1,6 +1,7 @@
 # Append these to your existing ~/.bash_profile
 
 source ~/.git_aliases
+source ~/.gcp_aliases
 
 # Show git branch in prompt - bash
 parse_git_branch() {

@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source ~/.git_aliases
+source ~/.gcp_aliases
 
 # Show git branch in prompt - zsh
 autoload -Uz vcs_info

@@ -1,0 +1,5 @@
+INSTANCE_NAME='utkarsh-dev'
+
+alias gcstart='gcloud compute instances start $INSTANCE_NAME'
+alias gcstop='gcloud compute instances stop $INSTANCE_NAME'
+alias gcs='gcloud compute ssh $INSTANCE_NAME'
