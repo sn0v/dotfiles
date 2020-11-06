@@ -63,13 +63,5 @@ gbd () {
   git branch -D "$1"
 }
 
-# Show git branch in prompt - zsh
-autoload -Uz vcs_info
-precmd () { vcs_info }
-setopt prompt_subst
-PS1="\$vcs_info_msg_0_$PS1"
-
-# Samsara specific aliases.
-alias trun='PRINT_LOG_LEVEL=ERROR taskrunner'
+# Fix git commit order on force push
 alias gfix='git rebase master --exec "git commit --amend --reset-author --no-edit"'
-export PATH="/usr/local/sbin:$PATH"
