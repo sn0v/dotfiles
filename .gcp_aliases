@@ -1,5 +1,9 @@
-INSTANCE_NAME='utkarsh-dev'
+GCP_INSTANCE_NAME='utkarsh-dev'
 
-alias gcstart='gcloud compute instances start $INSTANCE_NAME'
-alias gcstop='gcloud compute instances stop $INSTANCE_NAME'
-alias gcs='gcloud compute ssh $INSTANCE_NAME'
+# Start/stop your GCP VM
+alias gcstart='gcloud compute instances start $GCP_INSTANCE_NAME'
+alias gcstop='gcloud compute instances stop $GCP_INSTANCE_NAME'
+
+# Your VM must be powered on for these to work -
+alias gcs='gcloud compute ssh $GCP_INSTANCE_NAME'
+alias gcextip='gcloud compute instances describe $GCP_INSTANCE_NAME --format="get(networkInterfaces[0].accessConfigs[0].natIP)"'
